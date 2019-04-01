@@ -26,6 +26,11 @@ class DropzoneDialog extends React.Component {
             })
         } 
     }
+    componentWillReceiveProps(nextProps){
+        if(nextProps.error && this.state.files.length > 0){
+            this.setState({ files: [] });
+        }
+    }
     componentDidUpdate(prevProps, prevState){
         if(this.props.open !== prevProps.open){
             this.setState({
@@ -93,6 +98,7 @@ class DropzoneDialog extends React.Component {
                     <DialogContent>
                         <DropzoneArea
                             dropzoneText = {this.props.dropzoneText}
+                            error  = {this.props.error}
                             acceptedFiles={this.props.acceptedFiles}
                             filesLimit={this.props.filesLimit}
                             maxFileSize={this.props.maxFileSize}

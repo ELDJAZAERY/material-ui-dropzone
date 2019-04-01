@@ -71,6 +71,22 @@ class DropzoneArea extends Component{
             })
         } 
     }
+    componentWillReceiveProps(nextProps){
+        if(nextProps.error && this.state.fileObjects.length > 0){
+          this.setState({fileObjects : []})
+        }
+
+        if(nextProps.error){
+          this.CsvRejected(nextProps.error)
+        }
+    }
+    CsvRejected(error) {
+        this.setState({
+          openSnackBar: true,
+          snackbarMessage: 'Line '+error.nbLine+', colon '+error.nbColomn+' : '+error.desc,
+          snackbarVariant: 'error'
+        });
+    }
     onDrop(files){
         const _this = this;
         if(this.state.fileObjects.length + files.length > this.props.filesLimit){
@@ -221,7 +237,7 @@ DropzoneArea.defaultProps = {
     acceptedFiles: ['image/*', 'video/*', 'application/*'],
     filesLimit: 3,
     maxFileSize: 3000000,
-    dropzoneText: 'Drag and drop an image file here or click',
+    dropzoneText: 'Drag and drop a file here or click',
     showPreviews: false, // By default previews show up under in the dialog and inside in the standalone
     showPreviewsInDropzone: true,
     showFileNamesInPreview: false,
