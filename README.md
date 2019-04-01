@@ -150,6 +150,8 @@ export default class DropzoneDialogExample extends Component {
 | open           | Boolean     | false      | Required. Sets whether the dialog is open or closed 
 | acceptedFiles  | Array       |\['image/\*', 'video/\*', 'application/\*'] | A list of file mime types to accept. Does support wildcards.
 | filesLimit    | Number       | 3           | Maximum number of files that can be loaded into the dropzone
+| dropzoneText  | String       | 'Drag and drop an image file here or click' | Text in dropzone
+| error  | object {nbLine , nbColon , desc } | null | Files after Read Error.
 | maxFileSize   | Number       | 3000000     | Maximum file size (in bytes) that the dropzone will accept
 | showPreviews  | Boolean | false       | Shows previews **BELOW** the Dropzone
 | showPreviewsInDropzone| Boolean| true      | Shows preview **INSIDE** the dropzone
