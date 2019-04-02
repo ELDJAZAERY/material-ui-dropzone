@@ -169,6 +169,8 @@ class DropzoneArea extends Component{
         this.setState({
             openSnackBar: false,
         });
+        if(this.props.onCloseSnackbar)
+           this.props.onCloseSnackbar()
     };
     render(){
         const {classes} = this.props;
