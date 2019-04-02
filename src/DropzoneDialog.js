@@ -111,7 +111,6 @@ class DropzoneDialog extends React.Component {
                             onDropRejected={this.onDropRejected.bind(this)}
                             onDelete={this.onDelete.bind(this)}
                             clearOnUnmount={this.props.clearOnUnmount}
-                            onCloseSnackbar = {this.props.onCloseSnackbar}
                         />
                     </DialogContent>
                     <DialogActions>
