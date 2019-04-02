@@ -100,7 +100,7 @@ class DropzoneDialog extends React.Component {
                             dropzoneText = {this.props.dropzoneText}
                             error  = {this.props.error}
                             acceptedFiles={this.props.acceptedFiles}
-                            showFileNamesInPreview = {{this.props.showFileNamesInPreview}
+                            showFileNamesInPreview = {this.props.showFileNamesInPreview}
                             filesLimit={this.props.filesLimit}
                             maxFileSize={this.props.maxFileSize}
                             showPreviews={this.props.showPreviews}
