@@ -118,14 +118,14 @@ class DropzoneDialog extends React.Component {
                             color="primary"
                             onClick={this.handleClose.bind(this)}
                             >
-                            Cancel
+                            Annuler
                         </Button>
                         <Button
                             color="primary"
                             disabled={this.state.disabled}
                             onClick={this.handleSaveClick.bind(this)}
                             >
-                            Submit
+                            Soumettre
                         </Button>
                     </DialogActions>
                 </Dialog>
@@ -135,7 +135,7 @@ class DropzoneDialog extends React.Component {
 }
 DropzoneDialog.defaultProps = {
     open: false,
-    acceptedFiles: ['image/*', 'video/*', 'application/*'],
+    acceptedFiles: ['image/*', 'video/*', 'application/*','text/*'],
     filesLimit: 3,
     maxFileSize: 3000000,
     showPreviews: true,
